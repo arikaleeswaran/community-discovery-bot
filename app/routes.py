@@ -11,8 +11,8 @@ def init_routes(app):
         return jsonify({'response': process_message(message, user_id)})
 
     def process_message(message, user_id):
-        location = "New York"  # Extract from message using Rasa
-        interests = ["music", "art"]  # Extract from message using Rasa
+        location = "New York"  
+        interests = ["music", "art"] 
         user_service.update_preferences(user_id, interests)
         events = event_service.fetch_events(location, interests)
         return f"Here are some events based on your interests: {events}"
